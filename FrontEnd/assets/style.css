@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -46,12 +47,45 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a{
+	color:#B1663C;
+	text-decoration: none;
+}
+a:active{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
 /** end reset css**/
 body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+}
+.edition-bar {
+	width: 100%;
+	height: 59px;
+	background: black;
+	color: white;
+    display: flex;
+    margin: auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.edition-bar nav {
+	width: fit-content !important;
+	width: 15%;
+}
+.edition-modale {
+	width: 300px;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: space-between;
 }
 header {
 	display: flex;
@@ -84,6 +118,122 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+/* Ajout */
+.menu-categories {
+	width: 585px;
+	margin: 0px auto 20px auto;
+}
+.menu-categories ul {
+	display: flex;
+	justify-content: space-around;
+}
+.menu-categories ul li {
+	min-width: 100px;
+	font-weight: 700;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	color: #1D6154;
+	text-align: center;
+	padding: 10px;
+}
+.menu-categories ul li:hover {
+	background: #1D6154;
+	color: white;
+}
+.modal {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	box-sizing: border-box;
+}
+.modal-wrapper {
+	width: 600px;
+	overflow: auto;
+	max-width: calc(100vw - 20px);
+	max-height: calc(100vh - 20px);
+	padding: 20px;
+	background: #ffff;
+}
+.modal-wrapper .form-base {
+	width: 80%;
+}
+.modal-wrapper h2 {
+	font-weight: 500;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    font-family: 'Work Sans';
+    margin: 20px 0px;
+}
+.modal-wrapper button {
+	display: block;
+    width: fit-content;
+    padding: 10px 30px;
+}
+.modal-wrapper hr {
+	margin: 20px 0px;
+}
+.add-picture {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 170px;
+	padding: 0px 20px;
+	background: #e8f1f6;
+	color: #306685;
+}
+.add-picture img {
+	box-sizing: border-box;
+    max-height: 169px;
+}
+.input-file-label {
+	border-radius: 60px;
+	background: #B9C5CC;
+	font-size: 0.8rem;
+	padding: 10px;
+	margin: 0px;
+}
+.add-picture p {
+	font-size: 0.8rem;
+}
+.modal-wrapper .gallery{
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.modal-wrapper .gallery figure {
+	position: relative;
+}
+.modal-wrapper .gallery figure div {
+	position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-back-close {
+    position: relative;
+	height: 15px;
+}
+.js-modal-back {
+	position: absolute;
+	left: 0;
+}
+.js-modal-close {
+	position: absolute;
+	right: 0;
+}
+/* fin */
 nav ul {
 	display: flex;
 	align-items: center;
@@ -135,41 +285,40 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
-#contact {
+.form-base {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
-#contact > * {
+.form-base > * {
 	text-align: center;
 
 }
-#contact h2{
+.form-base h2{
 	margin-bottom: 20px;
 }
-#contact form {
+.form-base form {
 	text-align: left;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
 }
 
-#contact input {
+.form-base input, button, select {
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
+.form-base label {
 	margin: 2em 0 1em 0;
 }
-#contact textarea {
+.form-base textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+input[type="submit"], button{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -185,4 +334,3 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-
